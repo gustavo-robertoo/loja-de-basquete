@@ -35,6 +35,15 @@ input{
     outline: none;
 }
 
-.botao{
+button{
     padding-left: 85px;
+    background-color: dodgerblue;
+    width: 100%;
+    padding: 8px;
+    color: white;
+}
+
+button:hover{
+    background-color: deepskyblue;
+    cursor: pointer;
 }
