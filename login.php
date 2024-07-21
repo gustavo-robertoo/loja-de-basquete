@@ -20,9 +20,7 @@
         <label for="name">Senha </label>
         <input type="password" id="senha" placeholder="Senha" required>
         <br><br>
-        <div class="botao">
-        <input type="submit" id="botao" value="Entrar"> 
-        </div>
+        <button>Entrar</button>
       </div>
     </aside>
 </body>
