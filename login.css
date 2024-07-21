@@ -1,0 +1,40 @@
+body{
+    font-family: Arial, Helvetica, sans-serif   ;
+    margin: 0;
+    display: grid;
+    grid-template-areas: "box box aside"
+                         "box box aside"
+                         "box box aside";
+    
+}
+
+.box, img{
+    height: 100%;
+    width: 950px;
+    
+}
+aside{
+background-image: linear-gradient(45deg, rgb(93, 203, 240), rgb(248, 17, 17));
+height: 100%;
+width: 500px;
+}
+
+.box2{
+  background-color: rgba(43, 31, 31, 0.7);
+  position: absolute;
+  margin-top: 200px;
+  margin-left: 75px;
+  padding: 20px;
+  border-radius: 15px;
+  color: white;
+}
+
+input{
+    padding: 5px;
+    border: none;
+    outline: none;
+}
+
+.botao{
+    padding-left: 85px;
+}
