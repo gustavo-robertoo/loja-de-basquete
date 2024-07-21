@@ -1,0 +1,78 @@
+body{
+    margin: 0;
+    background-color: #D9D9D9;
+    display: grid;
+    grid-template-areas: "header header header header header"
+                         "nav nav nav nav nav"
+                         "section section sectionn sectionn aside"
+                         "footer footer footer footer footer";
+
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;                   
+}
+
+.search-container {
+    grid-area: header;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 300px;
+    width: 80%; 
+    max-width: 600px;
+}
+
+form {
+    display: flex;
+    width: 100%; 
+    justify-content: center;
+    align-items: center;
+}
+
+input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    outline: none;
+    flex-grow: 1; 
+    justify-content: center;
+    align-items: center;
+}
+
+
+#img1{
+    grid-area: header;
+    justify-self: left;
+    align-self: left;
+    padding-right: 10px;
+    height: 208px;
+    width:194px;
+}
+
+header{
+    grid-area: header;
+    background-color: #FF0000;
+    height: 200px;
+    width:1fr;
+}
+
+nav{
+    margin: 0;
+    grid-area: nav;
+    background-color: #405EAB;
+    width: 1fr;
+    height: 36px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+section{
+    grid-area: section;
+}
+
+footer{
+    grid-area: footer;
+    width: 1fr;
+    height: 282px;
+    background-color: #FF0000;
+}
