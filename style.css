@@ -12,8 +12,9 @@ body {
         "header header header header header"
         "nav nav nav nav nav"
         "section section section section aside"
-        "footer footer footer footer footer";
-    grid-template-rows: auto auto 1fr auto;
+        "footer footer footer footer footer"
+        "final final final final final";
+    grid-template-rows: auto auto auto auto auto;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;                   
 }
 
@@ -22,7 +23,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-left: 80px;
+    padding-left: 50px;
     width: 694px;
 }
 
@@ -35,7 +36,7 @@ form {
 }
 
 input[type="text"] {
-    padding: 10px 10px 10px 40px; /* Ajusta o padding para acomodar o ícone */
+    padding: 10px 10px 10px 40px; 
     font-size: 16px;
     outline: none;
     flex-grow: 1;
@@ -48,8 +49,8 @@ input[type="text"] {
     left: 10px;
     top: 50%;
     transform: translateY(-50%);
-    width: 20px; /* Tamanho do ícone */
-    height: 20px; /* Tamanho do ícone */
+    width: 20px; 
+    height: 20px; 
 }
 
 #img1 {
@@ -391,3 +392,23 @@ footer {
     background-color: #FF0000;
 }
 
+footer h1{
+    text-align: center;
+    
+}
+
+.pagamento{
+   display: flex; 
+   justify-content: center;
+   align-items: center;
+}
+
+.pagamento img{
+    width: 50px;
+    height: 30px;
+    padding: 10px;
+}
+
+p{
+    grid-area: final;
+}
