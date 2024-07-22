@@ -11,7 +11,7 @@ body {
     grid-template-areas: 
         "header header header header header"
         "nav nav nav nav nav"
-        "section section section section aside"
+        "section section section section section"
         "footer footer footer footer footer"
         "final final final final final";
     grid-template-rows: auto auto auto auto auto;
@@ -61,14 +61,21 @@ input[type="text"] {
     width: 194px;
 }
 
+header .container {
+    display: flex;
+    justify-content: flex-end; /* Alinha os itens à direita */
+    align-items: center; /* Alinha verticalmente ao centro */
+}
+
 .header-icons {
     display: flex;
-    align-items: center;;
+    justify-content: flex-end;
+    align-items: center; 
 }
 
 .header-icon {
     height: 40px; 
-    padding-left: 70px;
+    margin-left: 10px; 
     cursor: pointer;
 }
 
@@ -117,10 +124,15 @@ section {
     grid-area: section;
     height: 365px;
     width: 900px;
+    display: flex;
+    
+}
+
+section .container{
+    padding-top: 20px;
+    display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 20px;
-    padding-left: 200px;
 }
 
 h1 {
