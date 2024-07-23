@@ -103,6 +103,8 @@ header {
     padding: 0 10px; 
     height: 200px;
     width: auto;
+    border-bottom-style: solid ;
+    border-top-style: solid;
 }
 
 nav {
@@ -113,8 +115,7 @@ nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    
-
+    border-bottom-style: solid;
 }
 
 
@@ -129,6 +130,49 @@ nav a:hover, nav a:active {
 
 section {
     grid-area: section;
+}
+
+.carousel-container {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
+    background-color: #f2f2f2;
+}
+
+.carousel-slide {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide img {
+    min-width: 100%;
+    height: 500px; /* Defina a altura desejada */
+    object-fit: cover;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
 }
 
 #img2 {
@@ -391,8 +435,8 @@ h1 {
 
 .buy-button {
     display: block;
-    width: 80%;
-    margin: 10px auto;
+    width: calc(100% - 40px); /* Subtrai a margem dos lados */
+    margin: 10px auto; /* Centraliza horizontalmente */
     padding: 10px 20px;
     font-size: 16px;
     background-color: #405EAB;
@@ -402,10 +446,24 @@ h1 {
     cursor: pointer;
     text-align: center;
     text-decoration: none;
+    position: static;
 }
 
 .buy-button:hover {
     background-color: #4d70c9;
+}
+
+.quadrado, .produto1, .produto2, .produto3, .quadrado2, .produto4, .produto5, .produto6, .quadrado3, .produto7, .produto8, .produto9 {
+    background-color: #e1d7e1;
+    height: 400px;
+    width: 287px; /* Certifique-se de que a largura é suficiente */
+    margin-left: 30px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 10px;
 }
 
 footer {
@@ -413,11 +471,12 @@ footer {
     width: 100%;
     height: 282px;
     background-color: #ec1c24;
+    border-bottom-style: solid ;
+    border-top-style: solid;
 }
 
 footer h1{
     text-align: center;
-    
 }
 
 .pagamento{
