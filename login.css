@@ -5,28 +5,31 @@ body{
     grid-template-areas: "box box aside"
                          "box box aside"
                          "box box aside";
-    
+    grid-template-rows: auto auto auto;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 .box, img{
-    height: 100%;
-    width: 950px;
+    height: 97.5%;
+    width: 990px;
     
 }
 aside{
 background-image: linear-gradient(45deg, rgb(93, 203, 240), rgb(248, 17, 17));
-height: 100%;
-width: 500px;
+height: 95%;
+width: 370px;
+text-align: center;
 }
 
 .box2{
   background-color: rgba(43, 31, 31, 0.7);
   position: absolute;
   margin-top: 200px;
-  margin-left: 75px;
+  margin-left: 65px;
   padding: 20px;
   border-radius: 15px;
   color: white;
+  
 }
 
 input{
@@ -34,16 +37,15 @@ input{
     border: none;
     outline: none;
 }
-
-button{
+.botao input{
     padding-left: 85px;
-    background-color: dodgerblue;
+    background-color: rgb(0, 128, 255);
     width: 100%;
     padding: 8px;
     color: white;
 }
 
-button:hover{
+.botao input:hover{
     background-color: deepskyblue;
     cursor: pointer;
 }
