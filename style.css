@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    
+    width: auto;
 }
 
 body {
@@ -9,13 +9,13 @@ body {
     background-color: #f1eded;
     display: grid;
     grid-template-areas: 
-        "header header header header header"
-        "nav nav nav nav nav"
-        "section section section section section"
-        "footer footer footer footer footer"
-        "final final final final final";
-    grid-template-rows: auto auto auto auto auto;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;                   
+        "header header header header "
+        "nav nav nav nav "
+        "section section section section "
+        "footer footer footer footer "
+        "final final final final";
+    grid-template-rows: auto auto auto auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr;                   
 }
 
 .search-container {
@@ -23,7 +23,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-left: 50px;
     width: 694px;
 }
 
@@ -33,6 +32,7 @@ form {
     justify-content: center;
     align-items: center;
     position: relative;
+    margin: 10px;
 }
 
 input[type="text"] {
@@ -61,22 +61,31 @@ input[type="text"] {
     width: 194px;
 }
 
+img#img1 {
+    height: 100%;
+    width: auto;  
+}
+
 header .container {
+    grid-area: header;
     display: flex;
-    justify-content: flex-end; /* Alinha os itens à direita */
-    align-items: center; /* Alinha verticalmente ao centro */
+    justify-content: right; 
+    align-items: center;  
 }
 
 .header-icons {
     display: flex;
-    justify-content: flex-end;
+    justify-content: right;
     align-items: center; 
+    
 }
 
 .header-icon {
     height: 40px; 
-    margin-left: 10px; 
+    width: 40px;
     cursor: pointer;
+    gap: 10px;
+    padding: 30px;
 }
 
 header a:link, nav a:visited {
@@ -89,21 +98,23 @@ header {
     grid-area: header;
     background-color: #ec1c24;
     display: flex;
-    align-items: center;
+    justify-content: space-between; 
+    grid-template-columns: auto 1fr auto;
+    padding: 0 10px; 
     height: 200px;
-    width: 100%;
+    width: auto;
 }
 
 nav {
-    margin: 0;
     grid-area: nav;
     background-color: #243c84;
-    width: 1fr;
+    width: auto;
     height: 36px;
     display: flex;
-    flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    
+
 }
 
 
