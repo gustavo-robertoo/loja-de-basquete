@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="box">
+        <img id="tela" src="imagibaska.jpeg" alt="Imagem de fundo">
+    </div>
+    <aside>
+      <div class="box2">
+        <h2>Login</h2>
+        <form action="logado.php" method="get">
+          <label for="email">E-mail</label>
+          <input type="text" id="email" placeholder="Digite aqui" required>
+          <br><br>
+          <label for="senha">Senha</label>
+          <input type="password" id="senha" placeholder="Digite aqui" required>
+          <br><br>
+          <div class="botao">
+            <input type="submit" value="Entrar">
+          </div>
+          <div class="cadastro">
+            <a href="telacadastro.php">Não possui conta? Cadastre-se</a>
+          </div>
+        </form>
+      </div>
+    </aside>
+</body>
+</html>
