@@ -25,7 +25,7 @@ header {
     align-items: center;
     padding: 0 20px;
     border-bottom: 4px solid #f1eded;
-    height: 120px;
+    height: 150px;
 }
 
 #img1 {
@@ -121,17 +121,13 @@ section {
     border-bottom: 4px solid #243c84;
 }
 
+
 .carousel-container {
     position: relative;
-    width: 100%;
+    max-width: 100%;
+    margin: auto;
     overflow: hidden;
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-
-.carousel-slide img {
-    width: 100%;
-    height: auto;
+    background-color: #f2f2f2;
 }
 
 .carousel-slide {
@@ -139,15 +135,23 @@ section {
     transition: transform 0.5s ease-in-out;
 }
 
+.carousel-slide img {
+    min-width: 100%;
+    height: 500px; 
+    object-fit: cover;
+}
+
 .carousel-container button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.247);
     color: white;
     border: none;
     padding: 10px;
     cursor: pointer;
+    z-index: 10;
+    height: 100px;
 }
 
 .prev {
@@ -178,7 +182,7 @@ h1 {
     border-radius: 10px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    flex: 1 1 calc(25% - 40px); /* Adjust based on the number of items per row */
+    flex: 1 1 calc(25% - 40px); 
 }
 
 .quadrado img, .quadrado2 img, .quadrado3 img, .produto1 img, .produto2 img, .produto3 img, .produto4 img, .produto5 img, .produto6 img, .produto7 img, .produto8 img, .produto9 img {
