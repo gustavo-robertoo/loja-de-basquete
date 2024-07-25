@@ -12,8 +12,7 @@ body {
         "header header header header "
         "nav nav nav nav "
         "section section aside aside "
-        "footer footer footer footer "
-        "final final final final";
+        "footer footer footer footer ";
     grid-template-rows: auto auto auto auto;
     grid-template-columns: 1fr 1fr 1fr 1fr;                   
 }
@@ -26,7 +25,7 @@ header {
     align-items: center;
     padding: 0 20px;
     border-bottom: 4px solid #f1eded;
-    height: 120px;
+    height: 150px;
 }
 
 #img1 {
@@ -114,7 +113,7 @@ nav a:hover {
     background-color: #ec1c24;
 }
 
-/* Section Styles */
+
 section {
     grid-area: section;
     padding: 20px;
@@ -149,7 +148,6 @@ section p {
     text-align: justify;
 }
 
-/* Aside Styles */
 aside {
     grid-area: aside;
     display: flex;
@@ -184,7 +182,6 @@ aside {
     transform: scale(1.05);
 }
 
-
 footer {
     grid-area: footer;
     background-color: #243c84;
@@ -199,6 +196,7 @@ footer {
     justify-content: space-around;
     align-items: center;
     margin-bottom: 20px;
+    border-top: 4px solid #f1eded;
 }
 
 .help-link {
