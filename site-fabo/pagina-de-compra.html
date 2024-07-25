@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="pagina-de-compra.css">
+</head>
+<body>
+    <header>
+        <img id="img1" src="ggr.png" alt="Logo">
+        <div class="search-container">
+            <form action="/search" method="GET">
+                <input type="text" placeholder="Pesquisar..." name="search">
+                <button type="submit">
+                    <img src="lupa.png" alt="Search Icon" class="search-icon">
+                </button>
+            </form>
+        </div>
+        <div class="container">
+            <div class="header-icons">
+                <a href="login.html"><img src="login.png" alt="Login Icon" class="header-icon"></a>
+                <a href="/cart"><img src="carrinho.png" alt="Cart Icon" class="header-icon"></a>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <a href="index.html">Produtos</a>
+        <a href="#">Adicionar</a>
+        <a href="#">Contato</a>
+        <a href="sobre.html">Sobre</a>
+    </nav>
+
+    <section>
+        <div class="carousel-container">
+            <div class="carousel-slide">
+                <div class="imagem1">
+                    <img src="camiseta.png" alt="Imagem 1">
+                </div>
+    
+                <div class="imagem2">
+                    <img src="camiseta2.png" alt="Imagem 2">
+                </div>
+    
+                <div class="imagem3">
+                    <img src="camiseta3.png" alt="Imagem 3">
+                </div>
+            </div>
+            <div class="botao">
+                <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+                <button class="next" onclick="moveSlide(1)">&#10095;</button>
+            </div>
+        </div>
+        
+        <div class="produto-info">
+            <h1>Lakers Nike Boy Deluxe</h1>
+            <h2>79,99R$</h2>
+            <div class="tamanhos">
+                <button class="size-btn" data-size="P">P</button>
+                <button class="size-btn" data-size="M">M</button>
+                <button class="size-btn" data-size="G">G</button>
+                <button class="size-btn" data-size="GG">GG</button>
+            </div>
+            <div class="butao">
+                <button type="button" class="btn-carrinho"><img src="carrinho.png" alt="">Adicionar no Carrinho</button>
+            </div>
+
+            <h3>Descrição:</h3>
+            
+            <div class="texto">
+            <h4>*Nike Boy Deluxe - Jersey de Basquete*</h4>
+            <p>
+            Eleve o estilo e o desempenho em quadra com a camisa Nike Boy Deluxe, uma Jersey de basquete projetada para jovens atletas. Confeccionada com materiais de alta qualidade, oferece conforto excepcional e durabilidade, mantendo a liberdade de movimento essencial para o jogo. O design moderno e a tecnologia de ventilação garantem que você permaneça fresco e seco durante o treino ou a partida. Com o icônico logo da Nike e cores vibrantes, a Nike Boy Deluxe combina funcionalidade e estilo, ideal para jovens que querem se destacar tanto no desempenho quanto na aparência. Disponível em várias tamanhos e cores, esta camisa é perfeita para jovens jogadores de basquete que buscam qualidade e estilo.</p>
+            </div>
+            </div>
+         </section>
+    <aside>
+        
+    </aside>
+
+    <footer>
+        <div class="footer-content">
+            <a href="#" class="help-link">AJUDA?</a>
+            <h2>FORMAS DE PAGAMENTO</h2>
+            <div class="payment-methods">
+                <img src="boleto.png" alt="Boleto">
+                <img src="elo.png" alt="Elo">
+                <img src="mastercard.png" alt="Mastercard">
+                <img src="visa.png" alt="Visa">
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; Todos os direitos reservados à GGR Basketball e pela NBA</p>
+        </div>
+    </footer>
+
+    <script>
+      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="script.js"></script>
+</body>
+</html>
