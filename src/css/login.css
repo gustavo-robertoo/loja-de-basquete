@@ -1,106 +1,107 @@
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-    display: grid;
-    grid-template-areas: "box aside"
-                         "box aside";
-    grid-template-rows: 1fr;
-    grid-template-columns: 2fr 1fr;
-    height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  display: grid;
+  grid-template-areas:
+    "box aside"
+    "box aside";
+  grid-template-rows: 1fr;
+  grid-template-columns: 2fr 1fr;
+  height: 100vh;
 }
 
 .box img {
-    height: 100vh;
-    width: 99%;
-    object-fit: cover;
+  height: 100vh;
+  width: 99%;
+  object-fit: cover;
 }
 
-.tela{
-    margin-right: 20px;
+.tela {
+  margin-right: 20px;
 }
 
 aside {
-    background-image: linear-gradient(45deg, rgb(93, 203, 240), rgb(248, 17, 17));
-    height: 100vh;
-    width: 100%;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background-image: linear-gradient(45deg, rgb(93, 203, 240), rgb(248, 17, 17));
+  height: 100vh;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .box2 {
-    background-color: rgba(43, 31, 31, 0.7);
-    padding: 20px;
-    border-radius: 15px;
-    color: white;
-    max-width: 400px;
-    width: 100%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: rgba(43, 31, 31, 0.7);
+  padding: 20px;
+  border-radius: 15px;
+  color: white;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 h2 {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 label {
-    display: block;
-    margin-bottom: 5px;
+  display: block;
+  margin-bottom: 5px;
 }
 
 input[type="text"],
 input[type="password"] {
-    width: calc(100% - 20px); 
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    outline: none;
-    margin-bottom: 10px;
-    box-sizing: border-box; 
+  width: calc(100% - 20px);
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  margin-bottom: 10px;
+  box-sizing: border-box;
 }
 
-.email{
-    width: calc(100% - 20px);
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    outline: none;
-    margin-bottom: 10px;
-    box-sizing: border-box;
+.email {
+  width: calc(100% - 20px);
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  margin-bottom: 10px;
+  box-sizing: border-box;
 }
 
 input[type="email"],
 input[type="password"] {
-    background-color: #fff;
-    color: #333;
+  background-color: #fff;
+  color: #333;
 }
 
 input[type="submit"] {
-    background-color: rgb(0, 128, 255);
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    width: calc(100% - 20px);
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    outline: none;
-    margin-bottom: 10px;
-    box-sizing: border-box;
+  background-color: rgb(0, 128, 255);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: calc(100% - 20px);
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  margin-bottom: 10px;
+  box-sizing: border-box;
 }
 
 input[type="submit"]:hover {
-    background-color: deepskyblue;
+  background-color: deepskyblue;
 }
 
 .cadastro a {
-    color: red;
-    text-decoration: none;
-    display: block;
-    margin-top: 10px;
-    font-size: 14px;
+  color: red;
+  text-decoration: none;
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
 }
 
 .cadastro a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
