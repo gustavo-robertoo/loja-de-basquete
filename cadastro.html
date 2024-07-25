@@ -1,52 +1,55 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/css/cadastro.css" />
+    <link rel="shortcut icon" href="public/favicon.ico" type="image/x-icon" />
     <title>Cadastro de Clientes</title>
-    <link rel="stylesheet" href="cadastro.css">
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <h1>Cadastro de Clientes</h1>
-        <form id="cadastroForm">
-            <label for="nome">Nome Completo:</label>
-            <input type="text" id="nome" name="nome" required>
+      <h1>Cadastro de Clientes</h1>
+      <form id="cadastroForm">
+        <label for="nome">Nome Completo:</label>
+        <input type="text" id="nome" name="nome" required />
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
 
-            <label for="telefone">Telefone:</label>
-            <input type="tel" id="telefone" name="telefone" required>
+        <label for="telefone">Telefone:</label>
+        <input type="tel" id="telefone" name="telefone" required />
 
-            <label for="endereco">Endereço:</label>
-            <input type="text" id="endereco" name="endereco" required>
+        <label for="endereco">Endereço:</label>
+        <input type="text" id="endereco" name="endereco" required />
 
-            <label for="CPF">CPF:</label>
-            <input type="text" id="CPF" name="CPF" required>
+        <label for="CPF">CPF:</label>
+        <input type="text" id="CPF" name="CPF" required />
 
-            <label for="data de nascimento">Data de nascimento:</label>
-            <input type="date" id="data de nascimento" name="data de nascimento" required>
+        <label for="data de nascimento">Data de nascimento:</label>
+        <input
+          type="date"
+          id="data de nascimento"
+          name="data de nascimento"
+          required
+        />
 
-            <label for="cidade">Cidade:</label>
-            <input type="text" id="cidade" name="cidade" required>
+        <label for="cidade">Cidade:</label>
+        <input type="text" id="cidade" name="cidade" required />
 
-            
-            <label for="estado">Estado:</label>
-            <input type="text" id="estado" name="estado" required>
+        <label for="estado">Estado:</label>
+        <input type="text" id="estado" name="estado" required />
 
-            <label for="genero">Genero:</label>
-                <select id="genero" name="genero">
-                    <option value="">Selecione...</option>
-                    <option value="masculino">Masculino</option>
-                    <option value="feminino">Feminino</option>
-                    <option value="outro">Outro</option>
-                </select>   
-        
+        <label for="genero">Genero:</label>
+        <select id="genero" name="genero">
+          <option value="">Selecione...</option>
+          <option value="masculino">Masculino</option>
+          <option value="feminino">Feminino</option>
+          <option value="outro">Outro</option>
+        </select>
 
-            <button type="submit">Cadastrar</button> 
-          
-        </form>
+        <button type="submit">Cadastrar</button>
+      </form>
     </div>
-</body>
+  </body>
 </html>
