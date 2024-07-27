@@ -71,8 +71,8 @@ $result = $conexao->query($query);
 
     <nav>
       <a href="index.php">Produtos</a>
-      <a href="#">Adicionar</a>
-      <a href="#">Contato</a>
+      <a href="adicionar.html">Adicionar</a>
+      <a href="contato.html">Contato</a>
       <a href="sobre.html">Sobre</a>
     </nav>
 
@@ -209,7 +209,7 @@ $result = $conexao->query($query);
 
     <footer>
       <div class="footer-content">
-        <a href="#" class="help-link">AJUDA?</a>
+        <a href="ajuda.html" class="help-link">AJUDA?</a>
         <h2>FORMAS DE PAGAMENTO</h2>
         <div class="payment-methods">
           <img src="public/imgs/boleto.png" alt="Boleto" />

@@ -13,8 +13,8 @@ body {
         "nav nav nav nav"
         "section section section section"
         "footer footer footer footer";
-    grid-template-rows: 1fr auto;
-    grid-template-columns: 1fr 1fr 1fr 1fr;                   
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 header {
@@ -104,7 +104,6 @@ nav a {
     text-decoration: none;
     font-size: 18px;
     padding: 5px 20px;
-    
     border-radius: 5px;
     transition: background-color 0.3s;
 }
@@ -121,121 +120,81 @@ section {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     margin: 20px;
     transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
 }
 
 section:hover {
     transform: scale(1.01);
 }
 
-section h1 {
-    color: #ec1c24;
-    font-size: 45px;
-    text-align: center;
-    margin-bottom: 15px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-section h2 {
-    color: #243c84;
-    font-size: 28px;
-    padding-top: 20px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #243c84;
-    text-align: center;
-}
-
-.faq-item {
-    margin-bottom: 30px;
-    transition: all 0.3s ease-in-out;
-}
-
-.faq-item:hover {
-    transform: scale(1.02);
-}
-
-.question {
-    cursor: pointer;
-    background-color: #f9f9f9;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    font-size: 20px;
-    font-weight: bold;
-    color: #333;
-    transition: background-color 0.3s, box-shadow 0.3s;
-    display: flex;
+section form{
+    width: 900px;
     align-items: center;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.add-product h1 {
+    color: #243c84;
+    margin-bottom: 20px;
+    font-size: 32px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
     gap: 10px;
 }
 
-.question:hover {
-    background-color: #ececec;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+.form-group label {
+    color: #333;
+    font-size: 18px;
 }
 
-.answer {
-    display: none;
-    margin-top: 10px;
-    padding: 15px;
+.form-group input[type="text"],
+.form-group textarea,
+.form-group input[type="number"],
+.form-group select,
+.form-group input[type="file"] {
+    width: 600px;
+    padding: 10px;
+    font-size: 16px;
     border: 1px solid #ddd;
-    background-color: #f7f7f7;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+.form-group input[type="text"]:focus,
+.form-group textarea:focus,
+.form-group input[type="number"]:focus,
+.form-group select:focus,
+.form-group input[type="file"]:focus {
+    border-color: #243c84;
+}
+
+.form-group button {
+    width: 400px;
+    padding: 15px;
     font-size: 18px;
-    border-radius: 10px;
-    color: #555;
-    transition:all 0.3s ease-in-out;
+    color: white;
+    background-color: #243c84;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-.answer a {
-    color: #243c84;
-    text-decoration: underline;
-    transition: color 0.3s;
-}
-
-.answer a:hover {
-    color: #ec1c24;
-}
-
-section p {
-    font-size: 18px;
-    line-height: 1.6;
-    color: #666;
-}
-
-@media (max-width: 768px) {
-    section {
-        padding: 20px;
-        margin: 10px;
-    }
-
-    section h1 {
-        font-size: 28px;
-    }
-
-    section h2 {
-        font-size: 22px;
-    }
-
-    .question {
-        font-size: 18px;
-    }
-
-    .answer {
-        font-size: 16px;
-    }
-}
-
-/* Adicionando animações */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-.answer {
-    animation: fadeIn 0.5s ease-in-out;
+.form-group button:hover {
+    background-color: #ec1c24;
 }
 
 footer {
@@ -269,4 +228,33 @@ footer {
 
 .footer-bottom {
     font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 20px;
+        margin: 10px;
+    }
+
+    section h1 {
+        font-size: 28px;
+    }
+
+    .add-product {
+        padding: 20px;
+    }
+
+    .add-product h1 {
+        font-size: 28px;
+    }
+
+    .form-group label,
+    .form-group input[type="text"],
+    .form-group textarea,
+    .form-group input[type="number"],
+    .form-group select,
+    .form-group input[type="file"],
+    .form-group button {
+        font-size: 16px;
+    }
 }
