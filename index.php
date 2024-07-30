@@ -59,7 +59,7 @@ $result = $conexao->query($query);
               alt="Login Icon"
               class="header-icon"
           /></a>
-          <a href="pagina-de-compra.html"
+          <a href="carrinho.php"
             ><img
               src="public/imgs/carrinho.png"
               alt="Cart Icon"

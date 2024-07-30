@@ -1,117 +1,123 @@
 <?php
+session_start();
+require 'config2.php';
 
-if (isset($_POST['submit'])) {
-    include_once('config3.php');
+if (!isset($_SESSION['carrinho'])) {
+    $_SESSION['carrinho'] = [];
+}
 
-$id = $_POST["id"];
-$nome = $_POST["nome"];
-$category = $_POST["category"];
-$qty = $_POST["qty"];
-$price = $_POST["price"];
-$total = $_POST["total"];
-$subtotal = $_POST["subtotal"];
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $id = $_POST['id'];
+    
+    $stmt = $pdo->prepare("SELECT * FROM produtos WHERE id = ?");
+    $stmt->execute([$id]);
+    $produto = $stmt->fetch(PDO::FETCH_ASSOC);
 
-  
-    $stmt = $conexao->prepare("INSERT INTO carrinho.compras(id, nome, category, qty, price, total, subtotal) VALUES (?, ?, ?, ?, ?, ?)");
+    if ($produto) {
+        if (isset($_POST['remover'])) {
+            unset($_SESSION['carrinho'][$id]);
+        }
 
-    if ($stmt) {
-        $stmt->bind_param("issiddd", $id, $nome, $category, $qty, $prince, $total, $subtotal);
-        $stmt->execute();
-        $stmt->close();
-    } else {
+        if (isset($_POST['atualizar'])) {
+            $novaQuantidade = max(0, (int)$_POST['quantidade']);
+            $quantidadeAntiga = $_SESSION['carrinho'][$id] ?? 0;
+            
+            $diferenca = $novaQuantidade - $quantidadeAntiga;
 
-        echo "Error preparing statement: " . $conexao->error;
+            if ($novaQuantidade == 0) {
+                unset($_SESSION['carrinho'][$id]);
+            } else {
+                $_SESSION['carrinho'][$id] = $novaQuantidade;
+            }
+
+            $novoEstoque = $produto['estoque'] - $diferenca;
+            $stmt = $pdo->prepare("UPDATE produtos SET estoque = ? WHERE id = ?");
+            $stmt->execute([$novoEstoque, $id]);
+        }
+
+        if (isset($_POST['novo_preco'])) {
+            $novoPreco = (float)$_POST['novo_preco'];
+            $stmt = $pdo->prepare("UPDATE produtos SET preco = ? WHERE id = ?");
+            $stmt->execute([$novoPreco, $id]);
+        }
+    }
+}
+
+$carrinho = $_SESSION['carrinho'] ?? [];
+
+$produtos = [];
+$totalCarrinho = 0;
+if (!empty($carrinho)) {
+    try {
+        $ids = implode(',', array_fill(0, count($carrinho), '?'));
+        $stmt = $pdo->prepare("SELECT * FROM produtos WHERE id IN ($ids)");
+        $stmt->execute(array_keys($carrinho));
+        $produtos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($produtos as $produto) {
+            $quantidade = $carrinho[$produto['id']];
+            $preco = $produto['preco'];
+            $precoTotalProduto = $preco * $quantidade;
+            
+            // Depuração para verificar os valores
+            echo "Produto: " . htmlspecialchars($produto['nome']) . " - Preço: " . $preco . " - Quantidade: " . $quantidade . " - Total: " . $precoTotalProduto . "<br>";
+            
+            $totalCarrinho += $precoTotalProduto;
+        }
+    } catch (PDOException $e) {
+        die("Erro ao buscar produtos: " . $e->getMessage());
     }
 }
 ?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Carrinho de Compras</title>
-    <link rel="stylesheet" href="src/css/styles1.css" />
-    <link
-        href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-        rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/css/carrinho.css">
+    <title>Carrinho</title>
 </head>
 <body>
-<header>
-    <span>Carrinho de compras do <b>GGR</b></span>
-</header>
-<main>
-    <div class="page-title">Seu Carrinho</div>
-    <div class="content">    
-        <section>
-            <table>
-                <thead>
-                <tr>
-                    <th>Produto</th>
-                    <th>Preço</th>
-                    <th>Quantidade</th>
-                    <th>Total</th>
-                    <th>-</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr data-id="">
-                    <td>
-                        <div class="product">
-                            <img src="camiseta3.php" alt=""/>
-                            <div class="info">
-                                <div class="nome">Nome do produto</div>
-                                <div class="category">Categoria</div>
-                            </div>
-                        </div>
-                    </td>
-                    <td class="price">R$ 120</td>
-                    <td>
-                        <div class="qty"> 
-                            <button class="qty-minus"><i class="bx bx-minus"></i></button>
-                            <span class="qty-value">2</span>
-                            <button class="qty-plus"><i class="bx bx-plus"></i></button>
-                        </div>
-                    </td>
-                    <td class="total">R$ 240</td>
-                    <td>
-                        <button class="remove"><i class="bx bx-x"></i></button>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-        </section>
-        <aside>
-            <form action="carrinho.php" method="POST">
-                <div class="box">
-                    <header>Resumo da compra</header>
-                    <div class="info">
-                        <div><span>Sub-total</span><span class="subtotal">R$ 240</span></div>
-                        <div><span>Frete</span><span>Gratuito</span></div>
-                        <div>
-                            <button type="button">
-                                Adicionar cupom de desconto
-                                <i class="bx bx-right-arrow-alt"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <footer>
-                        <span>Total</span>
-                        <span class="total-value">R$ 240</span>
-                    </footer>
-                </div>
-                <input type="hidden" name="id" value="1" />
-                <input type="hidden" name="nome" value="Nome do produto" />
-                <input type="hidden" name="category" value="Categoria" />
-                <input type="hidden" name="qty" value="2" />
-                <input type="hidden" name="price" value="120" />
-                <input type="hidden" name="total" value="240" />
-                <input type="hidden" name="subtotal" value="240" />
-                <button type="submit" name="submit" id="submit">Finalizar Compra</button>
-            </form>
-        </aside>  
-    </div>
-</main>
-<script src="carrinho.js"></script>
+    <h1>Carrinho de Compras</h1>
+
+    <div class="display">
+    <table>
+        <tr>
+            <th>Produto</th>
+            <th>Quantidade</th>
+            <th>Preço</th>
+            <th>Total</th>
+            <th>Ações</th>
+        </tr>
+        <?php foreach ($produtos as $produto): ?>
+            <tr>
+                <td><?= htmlspecialchars($produto['nome']) ?></td>
+                <td><?= $carrinho[$produto['id']] ?></td>
+                <td>R$<?= number_format($produto['preco'], 2, ',', '.') ?></td>
+                <td>R$<?= number_format($produto['preco'] * $carrinho[$produto['id']], 2, ',', '.') ?></td>
+                <td>
+                    <form method="post" style="display:inline;">
+                        <input type="hidden" name="id" value="<?= $produto['id'] ?>">
+                        <input type="number" name="quantidade" value="<?= $carrinho[$produto['id']] ?>" min="0" max="<?= $produto['estoque'] + ($carrinho[$produto['id']] ?? 0) ?>">
+                        <button type="submit" name="atualizar">Atualizar</button>
+                    </form>
+                    <form method="post" style="display:inline;">
+                        <input type="hidden" name="id" value="<?= $produto['id'] ?>">
+                        <button type="submit" name="remover">Remover</button>
+                    </form>
+                    <form method="post" style="display:inline;">
+                        <input type="hidden" name="id" value="<?= $produto['id'] ?>">
+                        <input type="number" step="0.01" name="novo_preco" placeholder="Novo Preço">
+                        <button type="submit">Atualizar Preço</button>
+                    </form>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+    </table>
+
+    <h2>Total do Carrinho: R$<?= number_format($totalCarrinho, 2, ',', '.') ?></h2>
+</div>
+    <a href="pagina-de-compra.php">Voltar aos Produtos</a>
 </body>
 </html>
