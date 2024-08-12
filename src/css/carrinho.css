@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
@@ -9,6 +9,7 @@ body {
 h1 {
     color: #333;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .display{
@@ -48,7 +49,7 @@ input[type="number"] {
 }
 
 button {
-    background-color: #4CAF50;
+    background-color: #ec1c24;
     color: white;
     border: none;
     padding: 10px 15px;
@@ -58,7 +59,7 @@ button {
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #ec1c24;
 }
 
 form {
@@ -69,7 +70,7 @@ a {
     display: block;
     text-align: center;
     margin: 20px 0;
-    color: #4CAF50;
+    color: #ec1c24  ;
     text-decoration: none;
 }
 

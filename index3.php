@@ -71,10 +71,10 @@ $result = $conexao->query($query);
 
     <nav>
 
-    
+   
     <div class="inter-hb">
             <button class="button-hb dropdown">
-              <span class="span-hb">Categoria</span>
+              <span class="span-hb">Dissertações</span>
 
               <ul class="dropdown_menu dropdown_menu-1">
                 <li class="dropdown_item-1 dd-input">
@@ -125,8 +125,8 @@ $result = $conexao->query($query);
         </div>
 
         <div class="produto1">
-        <img src="public/imgs/boladebasquete.png" alt="" />
-        <p>Basketball Deluxe Premium</p>
+          <img src="public/imgs/camiseta.png" alt="" />
+          <p>Nike Boy Deluxe Premium</p>
           <h2>79,99 R$</h2>
           <a href="pagina-de-compra.php"
             ><button class="buy-button">Comprar</button>
@@ -134,8 +134,8 @@ $result = $conexao->query($query);
         </div>
 
         <div class="produto2">
-        <img src="public/imgs/bonedebasquete.png" alt="" />
-        <p>Boné L,James Deluxe Premium</p>
+          <img src="public/imgs/camiseta.png" alt="" />
+          <p>Nike Boy Deluxe Premium</p>
           <h2>79,99 R$</h2>
           <a href="pagina-de-compra.php"
             ><button class="buy-button">Comprar</button>
@@ -143,8 +143,8 @@ $result = $conexao->query($query);
         </div>
 
         <div class="produto3">
-        <img src="public/imgs/moletom.png" alt="" />
-        <p>Moletom Deluxe Premium</p>
+          <img src="public/imgs/camiseta.png" alt="" />
+          <p>Nike Boy Deluxe Premium</p>
           <h2>79,99 R$</h2>
           <a href="pagina-de-compra.php"
             ><button class="buy-button">Comprar</button>
@@ -154,8 +154,8 @@ $result = $conexao->query($query);
       <h1>OFERTAS ESPECIAIS</h1>
       <div class="produtos2">
         <div class="quadrado2">
-        <img src="public/imgs/moletom.png" alt="" />
-        <p>Moletom Deluxe Premium</p>
+          <img src="public/imgs/camiseta.png" alt="" />
+          <p>Nike Boy Deluxe Premium</p>
           <h2>79,99 R$</h2>
           <a href="pagina-de-compra.php"
             ><button class="buy-button">Comprar</button>
@@ -163,8 +163,8 @@ $result = $conexao->query($query);
         </div>
 
         <div class="produto4">
-        <img src="public/imgs/bonedebasquete.png" alt="" />
-        <p>Boné L,James Deluxe Premium</p>
+          <img src="public/imgs/camiseta.png" alt="" />
+          <p>Nike Boy Deluxe Premium</p>
           <h2>79,99 R$</h2>
           <a href="pagina-de-compra.php"
             ><button class="buy-button">Comprar</button>
@@ -172,8 +172,8 @@ $result = $conexao->query($query);
         </div>
 
         <div class="produto5">
-        <img src="public/imgs/boladebasquete.png" alt="" />
-        <p>Basketball Deluxe Premium</p>
+          <img src="public/imgs/camiseta.png" alt="" />
+          <p>Nike Boy Deluxe Premium</p>
           <h2>79,99 R$</h2>
           <a href="pagina-de-compra.php"
             ><button class="buy-button">Comprar</button>
@@ -193,8 +193,8 @@ $result = $conexao->query($query);
 
       <div class="produtos3">
         <div class="quadrado3">
-        <img src="public/imgs/boladebasquete.png" alt="" />
-        <p>Basketball Deluxe Premium</p>
+          <img src="public/imgs/camiseta.png" alt="" />
+          <p>Nike Boy Deluxe Premium</p>
           <h2>79,99 R$</h2>
           <a href="pagina-de-compra.php"
             ><button class="buy-button">Comprar</button>
@@ -211,8 +211,8 @@ $result = $conexao->query($query);
         </div>
 
         <div class="produto8">
-        <img src="public/imgs/moletom.png" alt="" />
-        <p>Moletom Deluxe Premium</p>
+          <img src="public/imgs/camiseta.png" alt="" />
+          <p>Nike Boy Deluxe Premium</p>
           <h2>79,99 R$</h2>
           <a href="pagina-de-compra.php"
             ><button class="buy-button">Comprar</button>
@@ -220,8 +220,8 @@ $result = $conexao->query($query);
         </div>
 
         <div class="produto9">
-        <img src="public/imgs/bonedebasquete.png" alt="" />
-        <p>Boné L,James Deluxe Premium</p>
+          <img src="public/imgs/camiseta.png" alt="" />
+          <p>Nike Boy Deluxe Premium</p>
           <h2>79,99 R$</h2>
           <a href="pagina-de-compra.php"
             ><button class="buy-button">Comprar</button>

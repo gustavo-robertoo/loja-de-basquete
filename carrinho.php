@@ -2,6 +2,7 @@
 session_start();
 require 'config2.php';
 
+
 if (!isset($_SESSION['carrinho'])) {
     $_SESSION['carrinho'] = [];
 }
@@ -9,6 +10,7 @@ if (!isset($_SESSION['carrinho'])) {
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $id = $_POST['id'];
     
+   
     $stmt = $pdo->prepare("SELECT * FROM produtos WHERE id = ?");
     $stmt->execute([$id]);
     $produto = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -59,11 +61,23 @@ if (!empty($carrinho)) {
             $preco = $produto['preco'];
             $precoTotalProduto = $preco * $quantidade;
             
-            // Depuração para verificar os valores
-            echo "Produto: " . htmlspecialchars($produto['nome']) . " - Preço: " . $preco . " - Quantidade: " . $quantidade . " - Total: " . $precoTotalProduto . "<br>";
-            
             $totalCarrinho += $precoTotalProduto;
         }
+
+       
+        if (isset($_SESSION['order_id'])) {
+            $orderId = $_SESSION['order_id'];
+            
+         
+            $stmt = $pdo->prepare("UPDATE orders SET total_value = ? WHERE id = ?");
+            $stmt->execute([$totalCarrinho, $orderId]);
+        } else {
+            
+            $stmt = $pdo->prepare("INSERT INTO orders (user_id, total_value) VALUES (?, ?)");
+            $stmt->execute([$_SESSION['id'], $totalCarrinho]);
+            $_SESSION['order_id'] = $pdo->lastInsertId(); 
+        }
+
     } catch (PDOException $e) {
         die("Erro ao buscar produtos: " . $e->getMessage());
     }

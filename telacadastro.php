@@ -8,14 +8,28 @@
     <link rel="stylesheet" href="src/css/telacadastro.css" />
 </head>
 <body>
-    
+
 <?php
 
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "site";
+
+
+$conexao = new mysqli($servername, $username, $password, $dbname);
+mysqli_set_charset($conexao, 'utf8');
+
+
+if ($conexao->connect_error) {
+    die("Conexão falhou: " . $conexao->connect_error);
+}
+
 if (isset($_POST['submit'])) {
-    include_once('config.php');
 
     $Nome = $_POST["nome"];
     $Email = $_POST["email"];
+    $Senha = $_POST["senha"];
     $Telefone = $_POST["telefone"];
     $Endereco = $_POST["endereco"];
     $CPF = $_POST["CPF"];
@@ -24,30 +38,41 @@ if (isset($_POST['submit'])) {
     $Estado = $_POST["estado"];
     $Genero = $_POST["genero"];
 
+
+    $senha_criptografada = password_hash($Senha, PASSWORD_BCRYPT);
+
   
-    $stmt = $conexao->prepare("INSERT INTO site.usuarios(nome, email, telefone, endereco, CPF, data_nascimento, cidade, estado, genero)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt = $conexao->prepare("SELECT id FROM usuarios WHERE email = ?");
+    $stmt->bind_param("s", $Email);
+    $stmt->execute();
+    $stmt->store_result();
 
-    if ($stmt) {
-        $stmt->bind_param("sssssssss", $Nome, $Email, $Telefone, $Endereco, $CPF, $Data_nascimento, $Cidade, $Estado, $Genero);
-
-        if ($stmt->execute()) {
-            header("Location: index.php?cadastro=sucesso");
-            exit();
-        }
-        
-        if ($stmt->execute()) {
-            echo "Cadastro realizado com sucesso!";
-        } else {
-            echo "Erro ao cadastrar: " . $stmt->error;
-        }
-
+    if ($stmt->num_rows > 0) {
+        echo "O e-mail já está cadastrado. Tente outro.";
         $stmt->close();
     } else {
-        echo "Erro na preparação da consulta: " . $conexao->error;
+        $stmt = $conexao->prepare("INSERT INTO usuarios(nome, email, senha, telefone, endereco, CPF, data_nascimento, cidade, estado, genero) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+
+        if ($stmt) {
+            $stmt->bind_param("ssssssssss", $Nome, $Email, $senha_criptografada, $Telefone, $Endereco, $CPF, $Data_nascimento, $Cidade, $Estado, $Genero);
+
+            if ($stmt->execute()) {
+                header("Location: index11.php?cadastro=sucesso");
+                exit();
+            } else {
+                echo "Erro ao cadastrar: " . $stmt->error;
+            }
+
+            $stmt->close();
+        } else {
+            echo "Erro na preparação da consulta: " . $conexao->error;
+        }
     }
 }
+
+$conexao->close();
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -65,6 +90,9 @@ if (isset($_POST['submit'])) {
 
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
+
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" required>
 
             <label for="telefone">Telefone:</label>
             <input type="tel" id="telefone" name="telefone" required>

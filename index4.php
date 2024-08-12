@@ -116,8 +116,8 @@ $result = $conexao->query($query);
       <h1>EM DESTAQUE</h1>
       <div class="produtos">
         <div class="quadrado">
-          <img src="public/imgs/camiseta.png" alt="" />
-          <p>Nike Boy Deluxe Premium</p>
+          <img src="public/imgs/moletom.png" alt="" />
+          <p>Moletom Deluxe Premium</p>
           <h2>79,99 R$</h2>
           <a href="pagina-de-compra.php"
             ><button class="buy-button">Comprar</button>
@@ -125,8 +125,8 @@ $result = $conexao->query($query);
         </div>
 
         <div class="produto1">
-        <img src="public/imgs/boladebasquete.png" alt="" />
-        <p>Basketball Deluxe Premium</p>
+        <img src="public/imgs/moletom.png" alt="" />
+        <p>Moletom Deluxe Premium</p>
           <h2>79,99 R$</h2>
           <a href="pagina-de-compra.php"
             ><button class="buy-button">Comprar</button>
@@ -134,8 +134,8 @@ $result = $conexao->query($query);
         </div>
 
         <div class="produto2">
-        <img src="public/imgs/bonedebasquete.png" alt="" />
-        <p>Boné L,James Deluxe Premium</p>
+        <img src="public/imgs/moletom.png" alt="" />
+        <p>Moletom Deluxe Premium</p>
           <h2>79,99 R$</h2>
           <a href="pagina-de-compra.php"
             ><button class="buy-button">Comprar</button>
@@ -163,8 +163,8 @@ $result = $conexao->query($query);
         </div>
 
         <div class="produto4">
-        <img src="public/imgs/bonedebasquete.png" alt="" />
-        <p>Boné L,James Deluxe Premium</p>
+        <img src="public/imgs/moletom.png" alt="" />
+        <p>Moletom Deluxe Premium</p>
           <h2>79,99 R$</h2>
           <a href="pagina-de-compra.php"
             ><button class="buy-button">Comprar</button>
@@ -172,8 +172,8 @@ $result = $conexao->query($query);
         </div>
 
         <div class="produto5">
-        <img src="public/imgs/boladebasquete.png" alt="" />
-        <p>Basketball Deluxe Premium</p>
+        <img src="public/imgs/moletom.png" alt="" />
+        <p>Moletom Deluxe Premium</p>
           <h2>79,99 R$</h2>
           <a href="pagina-de-compra.php"
             ><button class="buy-button">Comprar</button>
@@ -181,8 +181,8 @@ $result = $conexao->query($query);
         </div>
 
         <div class="produto6">
-          <img src="public/imgs/camiseta.png" alt="" />
-          <p>Nike Boy Deluxe Premium</p>
+        <img src="public/imgs/moletom.png" alt="" />
+        <p>Moletom Deluxe Premium</p>
           <h2>79,99 R$</h2>
           <a href="pagina-de-compra.php"
             ><button class="buy-button">Comprar</button>
@@ -193,8 +193,8 @@ $result = $conexao->query($query);
 
       <div class="produtos3">
         <div class="quadrado3">
-        <img src="public/imgs/boladebasquete.png" alt="" />
-        <p>Basketball Deluxe Premium</p>
+        <img src="public/imgs/moletom.png" alt="" />
+        <p>Moletom Deluxe Premium</p>
           <h2>79,99 R$</h2>
           <a href="pagina-de-compra.php"
             ><button class="buy-button">Comprar</button>
@@ -202,8 +202,8 @@ $result = $conexao->query($query);
         </div>
 
         <div class="produto7">
-          <img src="public/imgs/camiseta.png" alt="" />
-          <p>Nike Boy Deluxe Premium</p>
+        <img src="public/imgs/moletom.png" alt="" />
+        <p>Moletom Deluxe Premium</p>
           <h2>79,99 R$</h2>
           <a href="pagina-de-compra.php"
             ><button class="buy-button">Comprar</button>
@@ -220,8 +220,8 @@ $result = $conexao->query($query);
         </div>
 
         <div class="produto9">
-        <img src="public/imgs/bonedebasquete.png" alt="" />
-        <p>Boné L,James Deluxe Premium</p>
+        <img src="public/imgs/moletom.png" alt="" />
+        <p>Moletom Deluxe Premium</p>
           <h2>79,99 R$</h2>
           <a href="pagina-de-compra.php"
             ><button class="buy-button">Comprar</button>

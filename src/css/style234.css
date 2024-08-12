@@ -1,0 +1,106 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    display: grid;
+    grid-template-areas: 
+        "aside aside main main";
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.cartao {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.grid {
+    padding: 20px;
+}
+
+.imagem {
+    background-color: #b7f0b7; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagem img {
+    width: 500px;
+    border-radius: 50%;
+}
+
+.grid-informacoes img{
+    height: 10px;
+    width: 10px;
+}
+
+.informacoes {
+    margin: 200px;
+    background-color: #ffffff; 
+    padding: 20px;
+    justify-content: center; 
+    align-items: center; 
+    text-align: center;
+}
+
+.informacoes img{
+    height: 15px;
+    width: 15px;
+}
+
+.informacoes h1 {
+    margin-top: 0;
+    color: #333;
+}
+
+.informacoes p {
+    margin: 5px 0;
+    color: #555;
+}
+
+.desenvolvedores {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #888;
+}
+
+.curriculo {
+    background-color: darkgreen;
+    color: white;
+    border: none;
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Responsive styles for mobile */
+@media (max-width: 768px) {
+    body {
+        grid-template-areas: 
+            "aside"
+            "main";
+        grid-template-rows: auto auto;
+        height: auto;
+    }
+
+    .cartao {
+        grid-template-columns: 1fr;
+    }
+
+    .imagem img {
+        width: 80%; /* Adjust image size */
+    }
+
+    .informacoes {
+        margin: 20px 0;
+    }
+}

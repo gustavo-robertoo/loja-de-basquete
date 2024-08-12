@@ -7,6 +7,26 @@
     <link rel="stylesheet" href="src/css/adicionar.css">
     <link rel="shortcut icon" href="public/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .product-item {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin: 10px;
+            padding: 20px;
+            width: 200px;
+            text-align: center;
+        }
+        .product-item img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+
 </head>
 <body>
     <header>
@@ -27,7 +47,35 @@
         </div>
     </header>
     <nav>
-        <a href="index.html">Produtos</a>
+        
+        <div class="inter-hb">
+            <button class="button-hb dropdown">
+              <span class="span-hb">Categoria</span>
+
+              <!-- dropdown  -->
+              <ul class="dropdown_menu dropdown_menu-1">
+                <!-- itens do dropdown  -->
+                <li class="dropdown_item-1 dd-input">
+                  <a href="index4.php">Moletom</a>
+                </li>
+                <!-- <li class="dropdown_item-2 dd-input">
+                  <a href="redacoes/2BII/#">2BII</a>
+                </li> -->
+                <li class="dropdown_item-3 dd-input">
+                  <a href="index3.php">Camiseta</a>
+                </li>
+                <li class="dropdown_item-4 dd-input">
+                  <a href="index1.php">Bolas</a>
+                </li>
+                <li class="dropdown_item-5 dd-input">
+                  <a href="index2.php">Boné</a>
+                </li>
+              </ul>
+            </button>
+          </div>
+
+
+        <a href="index.php">Produtos</a>
         <a href="adicionar.html">Adicionar</a>
         <a href="contato.html">Contato</a>
         <a href="sobre.html">Sobre</a>
@@ -35,6 +83,33 @@
     <section>
         <a href="cadastro-itens.html">Você ainda nãp possue itens</a>
         <div id="content-placeholder"></div>
+
+    </main>
+    <script>
+        function mostrarProdutos() {
+            const listaProdutos = document.getElementById('product-list');
+            listaProdutos.innerHTML = ''; // Limpar lista atual
+
+            // Recuperar produtos do localStorage
+            const produtos = JSON.parse(localStorage.getItem('produtos') || '[]');
+
+            // Exibir cada produto
+            produtos.forEach(produto => {
+                const item = document.createElement('div');
+                item.className = 'product-item';
+                item.innerHTML = `
+                    <img src="${produto.imagem}" alt="${produto.nome}">
+                    <h3>${produto.nome}</h3>
+                    <p>${produto.descricao}</p>
+                    <p><strong>R$ ${produto.preco}</strong></p>
+                `;
+                listaProdutos.appendChild(item);
+            });
+        }
+
+        // Chamar a função para mostrar produtos quando a página for carregada
+        document.addEventListener('DOMContentLoaded', mostrarProdutos);
+    </script>
     </section>
     <footer>
         <a href="ajuda.html" class="help-link">AJUDA?</a>
@@ -52,13 +127,5 @@
         </div>
     </footer>
 
-    <script>
-        async function loadContent() {
-            const response = await fetch('adicionar-produto.html');
-            const content = await response.text();
-            document.getElementById('content-placeholder').innerHTML = content;
-        }
-        loadContent();
-    </script>
 </body>
 </html>
