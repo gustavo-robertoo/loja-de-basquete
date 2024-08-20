@@ -1,0 +1,36 @@
+CREATE DATABASE site;
+
+USE site;
+
+CREATE TABLE IF NOT EXISTS salvos (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  email VARCHAR(255) NOT NULL UNIQUE,
+  senha VARCHAR(255) NOT NULL unique
+);
+
+
+CREATE TABLE usuarios (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nome VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL UNIQUE,
+  senha VARCHAR(255) NOT NULL,
+  telefone VARCHAR(20) NOT NULL,
+  endereco VARCHAR(255) NOT NULL,
+  CPF VARCHAR(11) NOT NULL,
+  data_nascimento DATE NOT NULL,
+  cidade VARCHAR(255) NOT NULL,
+  estado VARCHAR(255) NOT NULL,
+  genero VARCHAR(20) NOT NULL
+);
+
+CREATE TABLE password_resets (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  email VARCHAR(255) NOT NULL,
+  token VARCHAR(100) NOT NULL,
+  expira_em DATETIME NOT NULL,
+  CONSTRAINT fk_usuario_email FOREIGN KEY (email) REFERENCES usuarios(email) ON DELETE CASCADE
+);
+
+
+drop database site;
+
